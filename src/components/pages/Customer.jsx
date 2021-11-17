@@ -5,8 +5,8 @@ import CustomerList from "./customer/CustomerList";
 
 const Customer = () => {
   return (
-    <div>
-      <div className="bg-gray p-5 flex justify-between">
+    <div className="bg-gray">
+      <div className="p-3 flex justify-between">
         <h1 className="font-semibold text-xl text-dark">Customer</h1>
         <ul className="flex gap-3 text-dark">
           <li className="bg-light px-5 rounded flex items-center gap-2">
