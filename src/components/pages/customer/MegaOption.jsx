@@ -5,8 +5,8 @@ const MegaOption = () => {
   const [selectOption, setSelectOption] = useState("Collection");
 
   return (
-    <div>
-      <div className="">
+    <div className="divide-y-2 divide-lightGray">
+      <div>
         <button
           className={`p-3 border-blue font-semibold text-sm ${
             selectOption === "Account" && "border-b-2 text-blue"
@@ -32,7 +32,6 @@ const MegaOption = () => {
           Report
         </button>
       </div>
-      <div className="border border-lightGray" />
       {selectOption === "Account" && <h1>Account info yet not ready</h1>}
       {selectOption === "Collection" && <Collection />}
       {selectOption === "Report" && <h1>Report info yet not ready</h1>}

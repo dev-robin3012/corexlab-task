@@ -9,7 +9,17 @@ module.exports = {
       lightGray: "#F1F5FE",
       blue: "#1155CC",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins"],
+      },
+    },
+    screens: {
+      sm: "425px",
+      md: { max: "767px" },
+      lg: "1024px",
+      xl: "1280px",
+    },
   },
   variants: {
     extend: {},

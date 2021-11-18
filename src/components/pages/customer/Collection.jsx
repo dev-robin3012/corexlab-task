@@ -19,7 +19,7 @@ const PersonInfoCard = ({ icon }) => (
 const Collection = () => {
   return (
     <div>
-      <div className="flex justify-between items-center py-2 text-sm">
+      <div className="flex justify-between items-center py-2">
         <a href> Activity</a>
         <div className="flex gap-3">
           <button className="flex items-center gap-1 rounded shadow px-4 py-1 bg-blue text-light">

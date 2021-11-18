@@ -9,23 +9,27 @@ import MegaOption from "./MegaOption";
 import mockData from "../../../customerData.json";
 
 const CustomerDetail = ({ customerId, handleBack }) => {
-  const { name, email, id } = mockData.find(customer => customer.id === customerId);
+  const { name, id } = mockData.find(customer => customer.id === customerId);
 
   return (
-    <div className="flex gap-5 p-4 text-dark">
-      <div style={{ lineHeight: 0 }} className="bg-light p-3 w-1/4 rounded">
-        <div className="flex items-center font-semibold text-lg">
+    <div className="lg:flex gap-5 p-4 text-dark">
+      <div
+        style={{ lineHeight: 0 }}
+        className="bg-light p-3 lg:w-1/4 rounded divide-y-2 divide-lightGray"
+      >
+        <div className="flex items-center font-semibold text-lg md:text-base py-3 md:pt-1">
           <GrFormPrevious className="text-2xl cursor-pointer" onClick={() => handleBack()} />
           Customer
         </div>
-        <div className="border border-lightGray my-2" />
-        <div className="flex gap-3 text-base">
+        <div className="flex gap-3 text-base py-3">
           <div className="bg-blue text-light rounded-full h-10 w-10 text-sm flex items-center justify-center">
             <span>MD</span>
           </div>
           <div>
-            <p className="font-semibold">{name}</p>
-            <p className="text-xs">CUST-{id}</p>
+            <div>
+              <p className="font-semibold">{name}</p>
+              <p className="text-xs">CUST-{id}</p>
+            </div>
             <div className="flex gap-5 text-center text-sm mt-3">
               <div>
                 <IoCall className="bg-lightGray h-10 w-10 p-2.5 rounded-full border-dark" />
@@ -42,8 +46,7 @@ const CustomerDetail = ({ customerId, handleBack }) => {
             </div>
           </div>
         </div>
-        <div className="border border-lightGray my-2" />
-        <div className="text-base flex flex-col gap-3">
+        <div className="text-base flex flex-col gap-3 py-3">
           <div className="flex items-center font-semibold text-sm gap-1">
             <IoIosArrowDown className="text-xl" />
             Profile Detail
@@ -59,8 +62,8 @@ const CustomerDetail = ({ customerId, handleBack }) => {
         </div>
         <div className="border border-lightGray my-2" />
       </div>
-      <div className="bg-light w-3/4 p-4 rounded">
-        <div className="flex items-center justify-between">
+      <div className="bg-light lg:w-3/4 p-4 rounded divide-y-2 divide-lightGray">
+        <div className="flex items-center justify-between pb-3">
           <div className="flex items-center gap-4">
             <button className="bg-blue text-light px-4 py-1 rounded flex items-center gap-1">
               <AiOutlinePlus /> Create New
@@ -78,7 +81,6 @@ const CustomerDetail = ({ customerId, handleBack }) => {
             </p>
           </div>
         </div>
-        <div className="border border-lightGray my-2" />
         <MegaOption />
       </div>
     </div>
