@@ -4,7 +4,7 @@ import { GrPrevious, GrNext } from "react-icons/gr";
 import ReactPaginate from "react-paginate";
 import mockData from "../../../customerData.json";
 
-const CustomerList = () => {
+const CustomerList = ({ handleDetailPage }) => {
   const [customers, setCustomers] = useState(mockData);
   const [pageNum, setPageNum] = useState(0);
 
@@ -34,7 +34,11 @@ const CustomerList = () => {
           </thead>
           <tbody className="bg-white">
             {displayCustomers.map(customer => (
-              <tr className="text-dark shadow-sm" key={customer.id}>
+              <tr
+                className="text-dark shadow-sm cursor-pointer hover:bg-gray"
+                key={customer.id}
+                onClick={() => handleDetailPage(customer.id)}
+              >
                 <td className="px-3 py-1.5">{customer.id}</td>
                 <td className="px-3 py-1.5">{customer.name}</td>
                 <td className="px-3 py-1.5">{customer.email}</td>
@@ -48,7 +52,7 @@ const CustomerList = () => {
           </tbody>
         </table>
         <div className="flex justify-between pt-5">
-          <p>Showing result 1 to 8 of {customers.length}</p>
+          <small>Showing result 1 to 8 of {customers.length}</small>
           <ReactPaginate
             previousLabel={<GrPrevious />}
             nextLabel={<GrNext />}

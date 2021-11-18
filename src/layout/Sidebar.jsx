@@ -12,6 +12,7 @@ import { HiOutlineDocumentReport } from "react-icons/hi";
 import { BsFillBagDashFill } from "react-icons/bs";
 import { IoIosNotifications } from "react-icons/io";
 import { GrChatOption } from "react-icons/gr";
+import logo from "../assets/logo.png";
 
 const SideBarItem = ({ icon, text }) => (
   <li
@@ -32,11 +33,9 @@ const SideBar = () => {
       {/* Sidebar starts */}
       <div className="w-52 py-5 h-full bg-light shadow-lg flex flex-col justify-between">
         <div className="">
-          {/* <div className="border ">
-            CORE <span>X</span> Books
-          </div> */}
+          <img src={logo} alt="" className="h-12 mx-auto" />
 
-          <ul className="mt-12 flex flex-col">
+          <ul className="mt-10 flex flex-col">
             <SideBarItem icon={<MdOutlineDashboard />} text="Dashboard" />
             <SideBarItem icon={<FiUsers />} text="Customer" />
             <SideBarItem icon={<BsFillBagDashFill />} text="Product" />
