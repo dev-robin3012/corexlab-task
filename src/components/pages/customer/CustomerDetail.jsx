@@ -12,10 +12,10 @@ const CustomerDetail = ({ customerId, handleBack }) => {
   const { name, id } = mockData.find(customer => customer.id === customerId);
 
   return (
-    <div className="lg:flex gap-5 p-4 text-dark">
+    <div className="gap-5 p-4 text-dark flex md:flex-col">
       <div
         style={{ lineHeight: 0 }}
-        className="bg-light p-3 lg:w-1/4 rounded divide-y-2 divide-lightGray"
+        className="bg-light p-3 w-1/4 md:w-full rounded divide-y-2 divide-lightGray"
       >
         <div className="flex items-center font-semibold text-lg md:text-base py-3 md:pt-1">
           <GrFormPrevious className="text-2xl cursor-pointer" onClick={() => handleBack()} />
@@ -62,7 +62,7 @@ const CustomerDetail = ({ customerId, handleBack }) => {
         </div>
         <div className="border border-lightGray my-2" />
       </div>
-      <div className="bg-light lg:w-3/4 p-4 rounded divide-y-2 divide-lightGray">
+      <div className="bg-light w-3/4 md:w-full p-4 rounded divide-y-2 divide-lightGray">
         <div className="flex items-center justify-between pb-3">
           <div className="flex items-center gap-4">
             <button className="bg-blue text-light px-4 py-1 rounded flex items-center gap-1">

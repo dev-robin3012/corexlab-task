@@ -15,10 +15,9 @@ module.exports = {
       },
     },
     screens: {
-      sm: "425px",
-      md: { max: "767px" },
-      lg: "1024px",
-      xl: "1280px",
+      xs: { max: "500px" },
+      sm: { max: "639px" },
+      md: { max: "769px" },
     },
   },
   variants: {

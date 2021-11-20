@@ -16,17 +16,19 @@ const Customer = () => {
           <div className="p-3 flex justify-between md:font-sm">
             <h1 className="font-semibold text-xl md:text-lg text-dark">Customer</h1>
             <ul className="flex gap-3 text-dark">
-              <li className="bg-light px-5 md:px-2 rounded flex items-center gap-2">
+              <li className="bg-light px-5 md:px-2 rounded flex items-center gap-2 sm:text-sm">
                 <RiFilter2Line />
                 Filter
               </li>
-              <li className="bg-light px-5 md:px-2 rounded flex items-center gap-2">
+              <li className="bg-light px-5 md:px-2 rounded flex items-center gap-2 sm:text-sm">
                 <AiOutlinePlus />
                 Import
               </li>
-              <li className="bg-light px-5 md:px-2 rounded flex items-center gap-2">Export</li>
-              <li className="bg-blue px-5 md:px-2 py-1.5 md:text-sm text-light rounded flex items-center gap-2">
-                <AiOutlinePlus /> Add Customer
+              <li className="bg-light px-5 md:px-2 rounded flex items-center gap-2 sm:text-sm">
+                Export
+              </li>
+              <li className="bg-blue px-5 md:px-2 py-1.5 md:text-sm text-light sm:text-sm rounded flex items-center gap-2">
+                <AiOutlinePlus /> <span className="sm:hidden">Add Customer</span>
               </li>
             </ul>
           </div>
