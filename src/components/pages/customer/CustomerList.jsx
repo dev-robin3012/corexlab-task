@@ -6,7 +6,6 @@ import PopOver from "./PopOver";
 
 const CustomerList = ({ handleDetailPage }) => {
   const [pageNum, setPageNum] = useState(0);
-  const [tooltipStatus, setTooltipStatus] = useState(false);
 
   const pageVisited = pageNum * 8;
 
