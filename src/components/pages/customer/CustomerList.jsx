@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { FiMoreVertical } from "react-icons/fi";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import ReactPaginate from "react-paginate";
 import mockData from "../../../customerData.json";
+import PopOver from "./PopOver";
 
 const CustomerList = ({ handleDetailPage }) => {
   const [pageNum, setPageNum] = useState(0);
+  const [tooltipStatus, setTooltipStatus] = useState(false);
 
   const pageVisited = pageNum * 8;
 
@@ -34,17 +35,24 @@ const CustomerList = ({ handleDetailPage }) => {
           <tbody className="bg-white">
             {displayCustomers.map(customer => (
               <tr
-                className="text-dark shadow-sm cursor-pointer hover:bg-gray"
+                title="For More Info Click on Customer Name"
+                className="text-dark shadow-sm hover:bg-gray"
                 key={customer.id}
-                onClick={() => handleDetailPage(customer.id)}
               >
                 <td className="px-3 xs:text-xs md:p-1.5 py-2">{customer.id}</td>
-                <td className="px-3 xs:text-xs md:p-1.5 py-2">{customer.name}</td>
+                <td
+                  className="px-3 xs:text-xs md:p-1.5 py-2"
+                  onClick={() => handleDetailPage(customer.id)}
+                >
+                  <a href className="cursor-pointer">
+                    {customer.name}
+                  </a>
+                </td>
                 <td className="px-3 xs:text-xs md:p-1.5 py-2">{customer.email}</td>
                 <td className="px-3 xs:text-xs md:p-1.5 py-2">{customer.mobile}</td>
                 <td className="px-3 xs:text-xs md:p-1.5 py-2">{customer.address}</td>
                 <td className="flex xs:text-xs md:p-1.5 py-2 justify-center">
-                  <FiMoreVertical className="cursor-pointer" />
+                  <PopOver />
                 </td>
               </tr>
             ))}
@@ -52,6 +60,7 @@ const CustomerList = ({ handleDetailPage }) => {
         </table>
         <div className="flex justify-between pt-5">
           <small>Showing result 1 to 8 of {mockData.length}</small>
+
           <ReactPaginate
             previousLabel={<GrPrevious />}
             nextLabel={<GrNext />}

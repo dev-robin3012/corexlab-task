@@ -13,6 +13,7 @@ import { BsFillBagDashFill } from "react-icons/bs";
 import { IoIosNotifications } from "react-icons/io";
 import { GrChatOption } from "react-icons/gr";
 import logo from "../assets/logo.png";
+import PopOver from "../components/pages/customer/PopOver";
 
 const SideBarItem = ({ icon, text }) => (
   <li
